@@ -1,0 +1,148 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Centering Everything */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Chat & Preferences Container */
+.chat-container {
+    width: 450px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Chat Header */
+.chat-header {
+    background: #0078FF;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Dark Mode Toggle */
+#theme-toggle {
+    border: none;
+    background: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Chatbox */
+#chatbox {
+    height: 350px;
+    overflow-y: auto;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chat Messages */
+.bot-message, .user-message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+    word-wrap: break-word;
+    display: inline-block;
+    text-align: left;
+}
+
+/* ✅ Bot message text is black in light mode */
+.bot-message {
+    background: #e0f4ff;
+    align-self: flex-start;
+    color: black;
+}
+
+/* ✅ User messages remain unchanged */
+.user-message {
+    background: #0078FF;
+    color: white;
+    align-self: flex-end;
+}
+
+/* Input Area */
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #ddd;
+}
+
+.input-container input {
+    flex: 1;
+    padding: 12px;
+    border: 2px solid #ccc;
+    outline: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.input-container button {
+    padding: 12px;
+    border: none;
+    background: #0078FF;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: background 0.3s;
+}
+
+.input-container button:hover {
+    background: #005bb5;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .chat-container {
+    background: #1e1e1e;
+}
+
+body.dark-mode #chatbox {
+    background: #121212;
+}
+
+body.dark-mode .input-container {
+    background: #2a2a2a;
+    border-top: 1px solid #444;
+}
+
+/* ✅ Bot messages are now white in dark mode */
+body.dark-mode .bot-message {
+    background: #333;
+    color: white;
+}
